@@ -1,3 +1,4 @@
+import sort
 grades = {"English":[75,100],
     "Maths":[30,35],
     "Geography":[33,50],
@@ -15,13 +16,8 @@ for i in range(len(grades)):
     gradper.append(round(grades[b][0]/grades[b][1]*100, 2))
     grad.append(b)
 
-def loopy(listy: list):
-    for i in range(1, len(listy)):
-        if (listy[i-1]<listy[i]):
-            listy[i], listy[i-1] = listy[i-1], listy[i]
-
 for _ in range(len(gradper)):    
-    loopy(gradper)
+    sort.loopy(gradper)
 
 for i in range(len(gradper)):
     if gradper[i] == max(gradper):
